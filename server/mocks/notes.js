@@ -19,10 +19,9 @@ module.exports = function(app) {
       var body = req.body;
       console.log(body);
       if(notes.length != 0)
-      req.body.note.id = notes[0].id + 1;
+        req.body.note.id = notes[0].id + 1;
       else
-      req.body.note.id = 1;
-
+        req.body.note.id = 1;
       noteDB.insert(req.body.note,function(err,newNote) {
         res.status(201);
         res.send(
