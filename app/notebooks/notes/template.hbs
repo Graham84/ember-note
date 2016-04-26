@@ -1,3 +1,4 @@
+ch5/ember-note/app/notebooks/notes/template.hbs
 <div class="col-md-12">
   Notes
 </div>
@@ -10,10 +11,7 @@
       <ul>
         {{#each note in model}}
         <li>
-          {{#link-to 'notebooks.notes.note' note.id}}
-          {{note.title}}
-          {{/link-to}}
-          <button {{action 'deleteNote' note}}>delete</button>
+          {{note.title}}<button {{action 'deleteNote' note}}>delete</button>
         </li>
         {{else}}
         <div>No notes found</div>
